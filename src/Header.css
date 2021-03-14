@@ -1,0 +1,90 @@
+.Header form {
+  background-color: transparent;
+  width: auto;
+  justify-content: center;
+}
+#search-input:focus {
+  color: aliceblue;
+}
+#search-input {
+  background: transparent;
+  border: none;
+  outline: 1px aliceblue solid;
+  width: fixed;
+  margin-top: 80px;
+}
+#search-input:hover {
+  outline: 1px rgb(1, 236, 40) solid;
+}
+::placeholder {
+  color: rgba(240, 248, 255, 0.7);
+}
+.Header form {
+  margin-top: 50px;
+}
+
+.animate__animated.animate__slideInDown {
+  animation-duration: 2.7s ease-in-out;
+  animation-delay: 500ms;
+  animation-name: sliding;
+}
+
+@keyframes sliding {
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+.Header h1 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  margin-right: 0px;
+  display: inline-block;
+  color: whitesmoke;
+  font-size: 70px;
+  font-weight: 500;
+  mix-blend-mode: overlay;
+  width: fixed 100%;
+  text-align: center;
+}
+.Header .Comment {
+  margin: 0;
+  color: aliceblue;
+  font-size: 15px;
+  font-weight: 300;
+}
+.Header .Comment::first-letter {
+  text-transform: capitalize;
+}
+.Header button {
+  background: transparent;
+  outline: none;
+  border: none;
+  color: aliceblue;
+  position: relative;
+  transform: scale(1.7, 1.7);
+  margin-left: 15px;
+  cursor: pointer;
+  padding: 0;
+  transition: none;
+  width: fixed;
+}
+.Header button:hover {
+  color: rgb(1, 236, 40);
+  transform: scale(1.98, 1.98);
+  cursor: pointer;
+}
+.Header il {
+  margin: 0 auto;
+  color: aliceblue;
+  font-size: 20px;
+  font-weight: 300;
+  display: block;
+}
+.Header il::first-letter {
+  text-transform: capitalize;
+}

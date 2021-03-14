@@ -1,0 +1,39 @@
+.repository {
+  color: aliceblue;
+  font-size: 12px;
+  font-weight: 300;
+  display: inline-block;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  position: relative;
+  bottom: -440px;
+  top: 80px;
+  text-decoration: none;
+  width: fixed;
+}
+.animate__animated.animate__slideInUp {
+  animation-duration: 2.5s ease-in-out;
+  animation-name: rep;
+  animation-delay: 500ms;
+}
+@keyframes rep {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.Repository:hover {
+  text-decoration: none;
+}
+strong {
+  text-decoration: underline;
+  color: aliceblue;
+}
+strong:hover {
+  font-weight: 400px;
+  color: rgb(1, 236, 40);
+  cursor: pointer;
+  margin-bottom: 30px;
+}

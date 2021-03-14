@@ -1,0 +1,31 @@
+.card {
+  background-color: rgba(239, 248, 254, 0.08);
+  border: 3px;
+  color: aliceblue;
+  margin-bottom: 30px;
+  width: 100px;
+}
+.col-2 {
+  margin-right: 2px;
+  margin-left: 2px;
+  height: 140px;
+  width: auto;
+}
+#forecast-row {
+  position: relative;
+  top: 20px;
+  width: auto;
+  margin: auto;
+  font-weight: 200px;
+  font-size: 14px;
+  padding: 30;
+  text-align: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+.Forecast h5 {
+  font-size: 14px;
+}
+.Forecast h6 {
+  width: 60px;
+}
