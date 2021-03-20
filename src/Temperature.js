@@ -1,7 +1,5 @@
 import React from "react";
 import "./Temperature.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "font-awesome/css/font-awesome.min.css";
 
 export default function Temperature() {
   let weatherData = {
@@ -28,7 +26,7 @@ export default function Temperature() {
           <ul className="Extras">
             <il>
               <div className="humidity">
-                <i className="fas fa-tint"></i>
+                <i className="fas fa-Coffee"></i>
                 <span id="humidity-input">{weatherData.humidity}</span>%
               </div>
             </il>

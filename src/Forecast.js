@@ -1,7 +1,5 @@
 import React from "react";
 import "./Forecast.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "font-awesome/css/font-awesome.min.css";
 
 export default function Forecast() {
   let forecastIcons = {
