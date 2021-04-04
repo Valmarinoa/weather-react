@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 import Temperature from "./Temperature";
 import Forecast from "./Forecast";
 import "./Header.css";
@@ -26,7 +27,7 @@ export default function Header() {
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       cityName: response.data.name,
-      date: "Friday 11:34",
+      date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
     });
   }
@@ -51,7 +52,9 @@ export default function Header() {
           {" "}
           {message} {weatherData.cityName}
         </h1>
-        <il>{weatherData.date}</il>
+        <il>
+          <FormattedDate date={weatherData.date} />
+        </il>
         <div className="Comment">{weatherData.description}</div>
         <Temperature
           temperature={Math.round(weatherData.temperature)}
