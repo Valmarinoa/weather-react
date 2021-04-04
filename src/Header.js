@@ -1,24 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 import Temperature from "./Temperature";
 import Forecast from "./Forecast";
 import "./Header.css";
 
-export default function Header() {
-  const [city, setCity] = useState("");
-  const [message, setMessage] = useState("");
+export default function Header(props) {
+  const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ ready: false });
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    setMessage(`${city}`);
-  }
-
-  function updateCity(event) {
-    event.preventDefault();
-    setCity(event.target.value);
-  }
 
   function handleResponse(response) {
     setWeatherData({
@@ -26,11 +16,26 @@ export default function Header() {
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
-      cityName: response.data.name,
+      city: response.data.name,
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
     });
   }
+  function search() {
+    const apiKey = "512154c45d8dece1e43e4befea864fb6";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function updateCity(event) {
+    setCity(event.target.value);
+  }
+
   if (weatherData.ready) {
     return (
       <div className="Header">
@@ -48,10 +53,7 @@ export default function Header() {
             </button>
           </form>
         </div>
-        <h1>
-          {" "}
-          {message} {weatherData.cityName}
-        </h1>
+        <h1>{city}</h1>
         <il>
           <FormattedDate date={weatherData.date} />
         </il>
@@ -66,10 +68,7 @@ export default function Header() {
       </div>
     );
   } else {
-    let city = "Medellin";
-    const apiKey = "512154c45d8dece1e43e4befea864fb6";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
+    search();
 
     return "loading..";
   }

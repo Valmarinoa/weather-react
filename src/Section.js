@@ -7,7 +7,7 @@ export default function Section() {
   return (
     <div className="Section">
       <div className="container">
-        <Header />
+        <Header defaultCity="Paris" />
         <Repository />
       </div>
     </div>
