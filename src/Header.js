@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
-import WeatherInfo from "./WeatherInfo";
+//import WeatherInfo from "./WeatherInfo";
 import Temperature from "./Temperature";
 import Forecast from "./Forecast";
 import "./Header.css";
@@ -69,7 +69,6 @@ export default function Header(props) {
     );
   } else {
     search();
-
     return "loading..";
   }
 }
