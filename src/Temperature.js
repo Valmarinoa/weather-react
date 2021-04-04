@@ -1,18 +1,13 @@
 import React from "react";
 import "./Temperature.css";
 
-export default function Temperature() {
-  let weatherData = {
-    temperature: 24,
-    wind: 7,
-    humidity: 26,
-  };
+export default function Temperature(props) {
   return (
     <div className="Temperature">
       <div className="clearfix weather-temperature">
         <ul id="temperatureMain">
           <il>
-            <span id="temp">{weatherData.temperature}</span>
+            <span id="temp">{props.temperature}</span>
             <span className="units">
               <a href="/" id="centigrados">
                 °C{" "}
@@ -26,14 +21,14 @@ export default function Temperature() {
           <ul className="Extras">
             <il>
               <div className="humidity">
-                <i className="fas fa-Coffee"></i>
-                <span id="humidity-input">{weatherData.humidity}</span>%
+                <i class="fas fa-tint"></i>
+                <span id="humidity-input"> {props.humidity}</span>%
               </div>
             </il>
             <il>
               <div className="wind">
                 <i className="fas fa-wind"></i>
-                <span id="wind-input">{weatherData.wind}</span>km/h
+                <span id="wind-input">{Math.round(props.wind)}</span>km/h
               </div>
             </il>
           </ul>
