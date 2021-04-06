@@ -6,8 +6,8 @@ import Temperature from "./Temperature";
 import Forecast from "./Forecast";
 import "./Header.css";
 
-export default function Header(props) {
-  const [city, setCity] = useState(props.defaultCity);
+export default function Header() {
+  const [city, setCity] = useState(null);
   const [weatherData, setWeatherData] = useState({ ready: false });
 
   function handleResponse(response) {
@@ -23,7 +23,7 @@ export default function Header(props) {
   }
   function search() {
     const apiKey = "512154c45d8dece1e43e4befea864fb6";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
 
@@ -43,7 +43,8 @@ export default function Header(props) {
           <form onSubmit={handleSubmit}>
             <input
               id="search-input"
-              type="text"
+              type="search"
+              value="submit"
               placeholder="city"
               autofocus="on"
               onChange={updateCity}
@@ -53,7 +54,7 @@ export default function Header(props) {
             </button>
           </form>
         </div>
-        <h1>{city}</h1>
+        <h1>{weatherData.city}</h1>
         <il>
           <FormattedDate date={weatherData.date} />
         </il>
