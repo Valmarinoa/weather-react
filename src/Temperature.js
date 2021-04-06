@@ -17,21 +17,24 @@ export default function Temperature(props) {
                 °F
               </a>
             </span>
+
+            <ul>
+              <span className="Extras">
+                <il>
+                  <div className="humidity">
+                    <i class="fas fa-tint"></i>
+                    <span id="humidity-input"> {props.humidity} %</span>
+                  </div>
+                </il>
+                <il>
+                  <div className="wind">
+                    <i className="fas fa-wind"></i>
+                    <span id="wind-input"> {Math.round(props.wind)} km/h</span>
+                  </div>
+                </il>
+              </span>
+            </ul>
           </il>
-          <ul className="Extras">
-            <il>
-              <div className="humidity">
-                <i class="fas fa-tint"></i>
-                <span id="humidity-input"> {props.humidity}</span>%
-              </div>
-            </il>
-            <il>
-              <div className="wind">
-                <i className="fas fa-wind"></i>
-                <span id="wind-input">{Math.round(props.wind)}</span>km/h
-              </div>
-            </il>
-          </ul>
         </ul>
       </div>
     </div>

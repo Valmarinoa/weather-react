@@ -1,11 +1,13 @@
 .Temperature weather-temperature {
   margin-left: auto;
   margin-right: auto;
+  margin-top: 10px;
   justify-content: center;
 }
 .Temperature #temp {
   font-size: 90px;
   justify-content: center;
+  position: relative;
 }
 .Temperature #temperatureMain {
   display: inline;
@@ -13,9 +15,9 @@
   color: aliceblue;
   font-weight: 200;
   mix-blend-mode: overlay;
-  margin-top: 60px;
+  margin-bottom: 0px;
   position: relative;
-  left: 28px;
+  left: 20px;
   padding-left: 0%;
   width: fixed;
   justify-content: center;
@@ -25,8 +27,6 @@
 }
 .Temperature .units {
   position: relative;
-  top: -50px;
-  left: -4px;
 }
 .Temperature .units:target {
   display: inline-block;
@@ -37,7 +37,7 @@
   line-height: 1;
   font-size: 20px;
   top: -50px;
-  left: -10px;
+  left: 6px;
   text-decoration: none;
   color: aliceblue;
 }
@@ -53,25 +53,30 @@
   display: inline-block;
 }
 .Temperature .Extras {
-  font-size: 15px;
+  font-size: 14px;
   display: block;
   text-align: left;
   color: aliceblue;
-  font-weight: 300;
-  width: fixed 20%;
+  font-weight: 200;
+  width: fixed 10%;
   padding: 0;
   position: relative;
   float: right;
   left: -170px;
-  top: 47px;
+  top: -78px;
   line-height: 12px;
 }
+
 #humidity-input,
 #wind-input {
   font-weight: 400;
+  font-size: 14px;
 }
 .Temperature i {
-  margin-right: 4px;
+  margin-right: 7px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-size: 14px;
 }
 .Temperature il {
   margin-bottom: 20px;

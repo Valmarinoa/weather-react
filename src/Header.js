@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
-//import WeatherInfo from "./WeatherInfo";
+import WeatherInfo from "./WeatherInfo";
 import Temperature from "./Temperature";
 import Forecast from "./Forecast";
 import "./Header.css";
 
-export default function Header() {
-  const [city, setCity] = useState(null);
+export default function Header(props) {
+  const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ ready: false });
 
   function handleResponse(response) {
@@ -43,8 +43,7 @@ export default function Header() {
           <form onSubmit={handleSubmit}>
             <input
               id="search-input"
-              type="search"
-              value="submit"
+              type="text"
               placeholder="city"
               autofocus="on"
               onChange={updateCity}
@@ -54,7 +53,9 @@ export default function Header() {
             </button>
           </form>
         </div>
-        <h1>{weatherData.city}</h1>
+        <h1>
+          <WeatherInfo data={weatherData.city} />
+        </h1>
         <il>
           <FormattedDate date={weatherData.date} />
         </il>
