@@ -1,0 +1,6 @@
+.WeatherIcon canvas {
+  float: left;
+  width: 32px;
+  height: 32px;
+  bottom: -10px;
+}

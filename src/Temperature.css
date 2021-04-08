@@ -8,6 +8,7 @@
   font-size: 90px;
   justify-content: center;
   position: relative;
+  font-weight: 230;
 }
 .Temperature #temperatureMain {
   display: inline;

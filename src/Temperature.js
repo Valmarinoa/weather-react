@@ -29,7 +29,7 @@ export default function Temperature(props) {
                 <il>
                   <div className="wind">
                     <i className="fas fa-wind"></i>
-                    <span id="wind-input"> {Math.round(props.wind)} km/h</span>
+                    <span id="wind-input">{Math.round(props.wind)} km/h</span>
                   </div>
                 </il>
               </span>

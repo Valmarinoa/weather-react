@@ -4,6 +4,7 @@ import FormattedDate from "./FormattedDate";
 import WeatherInfo from "./WeatherInfo";
 import Temperature from "./Temperature";
 import Forecast from "./Forecast";
+import WeatherIcon from "./WeatherIcon";
 import "./Header.css";
 
 export default function Header(props) {
@@ -19,6 +20,7 @@ export default function Header(props) {
       city: response.data.name,
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
+      icon: response.data.weather[0].icon,
     });
   }
   function search() {
@@ -54,10 +56,16 @@ export default function Header(props) {
           </form>
         </div>
         <h1>
-          <WeatherInfo data={weatherData.city} />
+          <WeatherInfo data={weatherData} />
         </h1>
         <il>
-          <FormattedDate date={weatherData.date} />
+          <span className="date-icon">
+            <WeatherIcon
+              code={weatherData.icon}
+              alt={weatherData.description}
+            />
+            <FormattedDate date={weatherData.date} />
+          </span>
         </il>
         <div className="Comment">{weatherData.description}</div>
         <Temperature
