@@ -1,5 +1,6 @@
 import React from "react";
 import "./Temperature.css";
+import WeatherUnits from "./WeatherUnits";
 
 export default function Temperature(props) {
   return (
@@ -7,16 +8,7 @@ export default function Temperature(props) {
       <div className="clearfix weather-temperature">
         <ul id="temperatureMain">
           <il>
-            <span id="temp">{props.temperature}</span>
-            <span className="units">
-              <a href="/" id="centigrados">
-                °C{" "}
-              </a>
-              |
-              <a href="/" id="fahrenheit">
-                °F
-              </a>
-            </span>
+            <WeatherUnits celsius={props.temperature} />
 
             <ul>
               <span className="Extras">
