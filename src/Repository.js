@@ -10,8 +10,8 @@ export default function Repository() {
           target="_blank"
           rel="noreferrer"
         >
-          <strong>Open-source code </strong>
-        </a>
+          <strong>Open-source code</strong>
+        </a>{" "}
         by Valmarinoa
       </div>
     </div>

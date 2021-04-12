@@ -9,6 +9,7 @@
   justify-content: center;
   position: relative;
   font-weight: 230;
+  left: -9px;
 }
 .Temperature #temperatureMain {
   display: inline;
@@ -33,12 +34,11 @@
   display: inline-block;
 }
 .Temperature .units,
-#centigrados,
-#fahrenheit {
+#centigrados {
   line-height: 1;
   font-size: 20px;
   top: -50px;
-  left: 6px;
+  left: -2px;
   text-decoration: none;
   color: aliceblue;
 }

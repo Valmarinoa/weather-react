@@ -20,21 +20,15 @@ export default function WeatherForecast(props) {
   }
 
   return (
-    <div className="Forecast">
-      <div className="row weather-forecast" id="forecast-row">
-        <div className="col-12 col-md-2">
-          <div class="card">
-            <div className="card-body">
-              <h5 className="card-title">{props.data.dt}</h5>
-              <h6>
-                <WeatherIcon code={props.data.weather[0].icon} size={32} />
-              </h6>
-              <p className="card-text">
-                {maxTemperature()}°| {minTemperature()}°
-              </p>
-            </div>
-          </div>
-        </div>
+    <div className="card">
+      <div className="card-body">
+        <h5 className="card-title">{day()}</h5>
+        <h6>
+          <WeatherIcon code={props.data.weather[0].icon} size={32} />
+        </h6>
+        <p className="card-text">
+          {maxTemperature()}| {minTemperature()}
+        </p>
       </div>
     </div>
   );
