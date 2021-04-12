@@ -4,7 +4,6 @@ import FormattedDate from "./FormattedDate";
 import WeatherInfo from "./WeatherInfo";
 import Temperature from "./Temperature";
 import Forecast from "./Forecast";
-import WeatherIcon from "./WeatherIcon";
 import "./Header.css";
 
 export default function Header(props) {
@@ -14,6 +13,7 @@ export default function Header(props) {
   function handleResponse(response) {
     setWeatherData({
       ready: true,
+      coordinates: response.data.coord,
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
@@ -24,7 +24,7 @@ export default function Header(props) {
     });
   }
   function search() {
-    const apiKey = "512154c45d8dece1e43e4befea864fb6";
+    const apiKey = "53f42d95adc1fddd6c6ecaa1958901d0";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
@@ -59,11 +59,7 @@ export default function Header(props) {
           <WeatherInfo data={weatherData} />
         </h1>
         <il>
-          <span className="date-icon">
-            <WeatherIcon
-              code={weatherData.icon}
-              alt={weatherData.description}
-            />
+          <span>
             <FormattedDate date={weatherData.date} />
           </span>
         </il>
@@ -73,8 +69,7 @@ export default function Header(props) {
           wind={weatherData.wind}
           humidity={weatherData.humidity}
         />
-        <br />
-        <Forecast />
+        <Forecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {
