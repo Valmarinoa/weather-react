@@ -41,7 +41,7 @@ export default function Header(props) {
   if (weatherData.ready) {
     return (
       <div className="Header">
-        <div class="animate__animated animate__slideInDown">
+        <div className="animate__animated animate__slideInDown">
           <form onSubmit={handleSubmit}>
             <input
               id="search-input"

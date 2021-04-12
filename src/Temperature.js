@@ -14,7 +14,7 @@ export default function Temperature(props) {
               <span className="Extras">
                 <il>
                   <div className="humidity">
-                    <i class="fas fa-tint"></i>
+                    <i className="fas fa-tint"></i>
                     <span id="humidity-input"> {props.humidity} %</span>
                   </div>
                 </il>
