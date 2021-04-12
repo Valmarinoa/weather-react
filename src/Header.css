@@ -11,7 +11,7 @@
   border: none;
   outline: 1px aliceblue solid;
   width: fixed;
-  margin-top: 80px;
+  margin-top: 60px;
 }
 #search-input:hover {
   outline: 1px rgb(1, 236, 40) solid;
