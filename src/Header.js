@@ -50,9 +50,6 @@ export default function Header(props) {
               autofocus="on"
               onChange={updateCity}
             />
-            <button type="button">
-              <i className="fas fa-map-marker-alt"></i>
-            </button>
           </form>
         </div>
         <h1>
