@@ -66,8 +66,8 @@
   border: none;
   color: aliceblue;
   position: relative;
-  transform: scale(1.7, 1.7);
-  margin-left: 15px;
+  transform: scale(1.35, 1.35);
+  margin-left: 8px;
   cursor: pointer;
   padding: 0;
   transition: none;
@@ -75,7 +75,7 @@
 }
 .Header button:hover {
   color: rgb(1, 236, 40);
-  transform: scale(1.98, 1.98);
+  transform: scale(1.4, 1.4);
   cursor: pointer;
 }
 .Header il {

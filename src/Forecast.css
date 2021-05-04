@@ -5,6 +5,9 @@
   margin-bottom: 30px;
   width: 100px;
 }
+.col {
+  padding: 1px;
+}
 .col-2 {
   margin-right: 2px;
   margin-left: 2px;
@@ -16,8 +19,8 @@
   position: relative;
   top: 20px;
   width: auto;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 40px;
+  margin-right: 40px;
   font-weight: 200px;
   font-size: 14px;
   padding: 0px;
