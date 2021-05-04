@@ -1,4 +1,5 @@
 .Section {
+  position: center fixed;
   background-image: url("https://www.skyfactory.com/videos/homepage/homepage_poster.jpg");
   background-position: center;
   background-repeat: no-repeat;

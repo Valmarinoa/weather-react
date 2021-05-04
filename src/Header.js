@@ -4,6 +4,7 @@ import FormattedDate from "./FormattedDate";
 import WeatherInfo from "./WeatherInfo";
 import Temperature from "./Temperature";
 import Forecast from "./Forecast";
+import CurrentLocation from "./CurrentLocation";
 import "./Header.css";
 
 export default function Header(props) {
@@ -48,8 +49,12 @@ export default function Header(props) {
               type="text"
               placeholder="city"
               autofocus="on"
+              autocomplete="off"
               onChange={updateCity}
             />
+            <button>
+              <CurrentLocation data={weatherData} />
+            </button>
           </form>
         </div>
         <h1>
