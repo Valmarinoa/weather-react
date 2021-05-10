@@ -4,7 +4,6 @@ import FormattedDate from "./FormattedDate";
 import WeatherInfo from "./WeatherInfo";
 import Temperature from "./Temperature";
 import Forecast from "./Forecast";
-import CurrentLocation from "./CurrentLocation";
 import "./Header.css";
 
 export default function Header(props) {
@@ -38,6 +37,17 @@ export default function Header(props) {
   function updateCity(event) {
     setCity(event.target.value);
   }
+  function showMyPosition(position) {
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+    let apiKey = "53f42d95adc1fddd6c6ecaa1958901d0";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+  function currentPosition(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(showMyPosition);
+  }
 
   if (weatherData.ready) {
     return (
@@ -52,8 +62,8 @@ export default function Header(props) {
               autocomplete="off"
               onChange={updateCity}
             />
-            <button>
-              <CurrentLocation data={weatherData} />
+            <button type="button" onClick={currentPosition}>
+              <i className="fas fa-map-marker-alt"></i>
             </button>
           </form>
         </div>
