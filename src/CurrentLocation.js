@@ -23,8 +23,8 @@ export default function CurrentLocation() {
   }
 
   function showMyPosition(position) {
-    let lat = position.coord.lat;
-    let lon = position.coord.lon;
+    let lat = position.coord.latitude;
+    let lon = position.coord.longitude;
     let apiKey = "53f42d95adc1fddd6c6ecaa1958901d0";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(showTemp);
